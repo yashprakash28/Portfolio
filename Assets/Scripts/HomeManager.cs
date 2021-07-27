@@ -58,14 +58,14 @@ public class HomeManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         transition.transform.DOScale(new Vector3(30f, 30f, 30f), 0.3f);
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.75f);
 
         homeScreen.SetActive(false);
 
 
-        camera.transform.DOMove(new Vector3(0f, 0f, 0f), 2f, false);
+        camera.transform.DOMove(new Vector3(0f, 3.3f, -6.3f), 4f, false);
         yield return new WaitForSeconds(0.5f);
-        camera.transform.DORotate(new Vector3(0f, 0f, 0f), 2f);
+        camera.transform.DORotate(new Vector3(25f, 0f, 0f), 4f);
     }
 
 }
