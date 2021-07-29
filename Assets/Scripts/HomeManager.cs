@@ -15,6 +15,7 @@ public class HomeManager : MonoBehaviour
     public GameObject alertText;
     public GameObject homeScreen;
     public GameObject camera;
+    public GameObject spaceShipScreen;
 
 
     public void takeOffButton()
@@ -50,11 +51,12 @@ public class HomeManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
 
         homeScreen.SetActive(false);
+        spaceShipScreen.SetActive(true);
 
 
-        camera.transform.DOMove(new Vector3(0f, 3.3f, -6.3f), 4f, false);
+        camera.transform.DOMove(new Vector3(0f, 3.3f, -6.3f), 2.5f, false);
         yield return new WaitForSeconds(0.5f);
-        camera.transform.DORotate(new Vector3(25f, 0f, 0f), 4f);
+        camera.transform.DORotate(new Vector3(25f, 0f, 0f), 2.5f);
     }
 
 }

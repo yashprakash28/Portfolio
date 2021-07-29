@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114502082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,13 +2396,14 @@ GameObject:
   - component: {fileID: 1646986751}
   - component: {fileID: 1646986750}
   - component: {fileID: 1646986749}
+  - component: {fileID: 1646986753}
   m_Layer: 5
   m_Name: '[Ships]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1646986749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,6 +2489,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1646986753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646986748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93acffad4c2231841a7bcb570e94c55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotateX: 0
+  isRotateY: 1
+  isRotateZ: 0
+  isDim: 0
+  isTranslateX: 0
+  isTranslateY: 0
+  isTranslateZ: 0
+  speed: 4
+  initialPos: {x: 0, y: 0, z: 0}
+  offset: 0
 --- !u!1 &1705078577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,6 +2874,7 @@ MonoBehaviour:
   alertText: {fileID: 2140157048}
   homeScreen: {fileID: 114502081}
   camera: {fileID: 963194225}
+  spaceShipScreen: {fileID: 1646986748}
 --- !u!4 &2140096608
 Transform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class shipSelection : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class shipSelection : MonoBehaviour
     public static GameObject currentSelectedShip;
     public GameObject continueButton;
     public GameObject transition;
+
+    public static string shipName = "BlueBull";
 
 
     // Start is called before the first frame update
@@ -65,13 +68,15 @@ public class shipSelection : MonoBehaviour
         shipList[index].SetActive(true);
 
         PlayerPrefs.SetInt("ShipSelected", index);
+        shipName = currentSelectedShip.name;
+        Debug.Log(shipName);
+        PlayerPrefs.SetString("ShipSelectedName", shipName);
 
         currentSelectedShip = shipList[index];
     }
 
     public void PlayButton()
     {
-
         StartCoroutine(transitionAnimation());
     }
 
@@ -80,6 +85,11 @@ public class shipSelection : MonoBehaviour
         continueButton.transform.DOMoveY(1300, 1f);
         yield return new WaitForSeconds(0.75f);
         transition.transform.DOScale(new Vector3(30f, 30f, 30f), 0.3f);
+
+        yield return new WaitForSeconds(0.75f);
+
+        // start new scene
+        SceneManager.LoadScene("Data");
     }
 
 }
