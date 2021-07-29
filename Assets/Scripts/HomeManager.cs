@@ -15,18 +15,7 @@ public class HomeManager : MonoBehaviour
     public GameObject alertText;
     public GameObject homeScreen;
     public GameObject camera;
-    // public GameObject characterScreen;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void takeOffButton()
     {
