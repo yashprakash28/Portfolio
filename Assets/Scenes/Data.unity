@@ -13740,7 +13740,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422488420}
-  m_LocalRotation: {x: 0.12403473, y: -0, z: -0, w: 0.9922779}
+  m_LocalRotation: {x: 0.12403473, y: -1e-45, z: -0, w: 0.9922779}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19039,6 +19039,11 @@ MonoBehaviour:
   ship: {fileID: 2131831442}
   landButton: {fileID: 957751004}
   landText: {fileID: 1500043395}
+  asteroids:
+  - {fileID: 532324483704363366, guid: 1a350ebf93957194a9a44600e6862810, type: 3}
+  - {fileID: 6761888048932828220, guid: 051d7337e2c18a747acb4ff385e9d80e, type: 3}
+  - {fileID: 8028554983741990647, guid: 434928b4692f42c45a7f763fafc4abec, type: 3}
+  - {fileID: 2542271731282692157, guid: b64caddb3b7870843bf36a238089e60d, type: 3}
 --- !u!4 &806943544
 Transform:
   m_ObjectHideFlags: 0

@@ -22,13 +22,12 @@ public class SolarSystemManager : MonoBehaviour
     public GameObject landButton;
     public TMP_Text landText;
     public static string currentPlanet;
+    // private int maxAsteroids = 10;
+    private int maxAsteroids = 40;
 
-    // KeyValuePair<string, float> nearestPlanet;// = new KeyValuePair<string, float>();
-        
-    // Start is called before the first frame update
+    public GameObject[] asteroids;
     void Start()
     {
-        // nearestPlanet = new KeyValuePair<string, float>();
         
         planetList = new GameObject[planets.transform.childCount];
         distance = new float[planets.transform.childCount];
@@ -37,15 +36,15 @@ public class SolarSystemManager : MonoBehaviour
         for (int i = 0; i < planets.transform.childCount; i++)
         {
             planetList[i] = planets.transform.GetChild(i).gameObject;
-            // Debug.Log(planetList[i].name);
         }
 
         nearestPlanet.name = planetList[0].name;
         nearestPlanet.distance = Vector3.Distance(planetList[0].transform.position, ship.transform.position);
 
+        placeAsteroids();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -64,10 +63,21 @@ public class SolarSystemManager : MonoBehaviour
         }
     }
 
-    // TODO multiple asteroids
-
     public void land()
     {
         SceneManager.LoadScene("PlanetSurface");
+    }
+
+    void placeAsteroids()
+    {
+        foreach(var ast in asteroids)
+        {
+            for(int i=0 ; i<maxAsteroids ; i++)
+            {
+                Vector3 pos = new Vector3(-40f+i, Random.Range(-3, 3), Random.Range(27, 40));
+                Instantiate(ast, pos, Quaternion.identity);
+                // ast.transform.scale = new Vector3()
+            }
+        }
     }
 }
