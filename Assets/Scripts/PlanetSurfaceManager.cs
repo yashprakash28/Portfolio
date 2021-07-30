@@ -39,23 +39,23 @@ public class PlanetSurfaceManager : MonoBehaviour
                              break;
 
             case "Skills" : x = 1800f;
-                             y = 70f;
-                             z = 300f;
+                             y = 31f;
+                             z = 388;
                              break;
             
             case "Projects" : x = 3450f;
-                             y = 15f;
+                             y = 18f;
                              z = 270f;
                              break;
             
-            case "Achievements" : x = 4700f;
-                             y = 30f;
+            case "Experiences" : x = 4700f;
+                             y = 29f;
                              z = 400f;
                              break;
             
-            case "Experience" : x = 6300f;
-                             y = 40f;
-                             z = 40f;
+            case "Achievements" : x = 6300f;
+                             y = 22f;
+                             z = 55f;
                              break;
 
             default :        x = 700f;

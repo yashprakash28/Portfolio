@@ -80,4 +80,17 @@ public class SolarSystemManager : MonoBehaviour
             }
         }
     }
+
+    public void toggleInstructions(GameObject obj)
+    {
+        if(obj.activeInHierarchy)
+        {
+            obj.SetActive(false);
+        }
+        else
+        {
+            obj.SetActive(true);
+        }
+    }
+
 }
