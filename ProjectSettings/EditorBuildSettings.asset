@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Data.unity
     guid: de4086c0454a63d44a9b4ce021627482
+  - enabled: 1
+    path: Assets/Scenes/PlanetSurface.unity
+    guid: 822a37278f43b5546b727ab7aad9324b
   m_configObjects: {}

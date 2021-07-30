@@ -7128,7 +7128,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233653606}
-  m_LocalRotation: {x: 0.10596518, y: -0.0000000042773767, z: 4.558193e-10, w: 0.99436986}
+  m_LocalRotation: {x: 0.10596518, y: 0.000000004277377, z: -4.5581935e-10, w: 0.99436986}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19035,7 +19035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9eb244e0e0bd94f8e74430c4eab768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1704778225}
+  planets: {fileID: 843208906}
+  ship: {fileID: 2131831442}
+  landButton: {fileID: 957751004}
+  landText: {fileID: 1500043395}
 --- !u!4 &806943544
 Transform:
   m_ObjectHideFlags: 0
@@ -20978,15 +20981,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.570013, y: 9.853598, z: 1.570013}
   m_Children:
-  - {fileID: 1500043394}
+  - {fileID: 1703647010}
   m_Father: {fileID: 448533940}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -786, y: -370}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &957751006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21030,7 +21033,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 957751007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 806943543}
+        m_TargetAssemblyTypeName: SolarSystemManager, Assembly-CSharp
+        m_MethodName: land
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &957751007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26699,17 +26714,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500043393}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.98, y: 0.17282552, z: 0.98}
+  m_LocalScale: {x: 0.16335076, y: 2.5680823, z: 0.98}
   m_Children: []
-  m_Father: {fileID: 957751005}
+  m_Father: {fileID: 1703647010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -10.6}
-  m_SizeDelta: {x: 592.4938, y: 42.64262}
+  m_AnchoredPosition: {x: 0.00024414, y: -0.00012779}
+  m_SizeDelta: {x: 440.98, y: 42.235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500043395
 MonoBehaviour:
@@ -26731,7 +26746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LAND
+  m_text: Click here to Land on Planet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -26758,10 +26773,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 34.95
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -34146,6 +34161,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692175172}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1703647009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1703647010}
+  - component: {fileID: 1703647012}
+  - component: {fileID: 1703647011}
+  m_Layer: 5
+  m_Name: TextBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1703647010
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703647009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.6247377, y: 0.067297496, z: 1}
+  m_Children:
+  - {fileID: 1500043394}
+  m_Father: {fileID: 957751005}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -10.1}
+  m_SizeDelta: {x: 72.0348, y: 108.46402}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1703647011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703647009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1703647012
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703647009}
+  m_CullTransparentMesh: 1
 --- !u!1 &1704778225
 GameObject:
   m_ObjectHideFlags: 0
@@ -34223,7 +34311,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704778225}
-  m_LocalRotation: {x: 0.10596519, y: -0.0000000042913637, z: 4.5433501e-10, w: 0.99436986}
+  m_LocalRotation: {x: 0.10596519, y: 0.000000004291364, z: -4.5433513e-10, w: 0.99436986}
   m_LocalPosition: {x: 0, y: 0.16, z: -1.044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -41102,7 +41190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867556910}
-  m_LocalRotation: {x: 0.08790843, y: -0.000000008569884, z: 7.56293e-10, w: 0.99612856}
+  m_LocalRotation: {x: 0.08790843, y: 0.000000008569884, z: -7.56293e-10, w: 0.99612856}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -43667,8 +43755,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.92
-  m_Radius: 0.51
+  m_Height: 0
+  m_Radius: 0.24
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -43704,7 +43792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2131831443}
   cam: {fileID: 1704778228}
-  speed: 1.93
+  speed: 3
   turnSmoothTime: 0.1
 --- !u!1 &2133841047
 GameObject:
