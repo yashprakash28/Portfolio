@@ -8,7 +8,7 @@ using DG.Tweening;
 public class HomeManager : MonoBehaviour
 {
     public GameObject nameInput;
-    string userName;
+    public static string userName;
     public GameObject continueButton;
     // bool homeScreen = true;
     public GameObject transition;
@@ -21,6 +21,7 @@ public class HomeManager : MonoBehaviour
     public void takeOffButton()
     {
         userName = nameInput.GetComponent<TMP_InputField>().text;
+        // username = 
         Debug.Log(userName);
         if(userName == "")
         {
@@ -28,7 +29,6 @@ public class HomeManager : MonoBehaviour
         }
         else
         {
-            // TODO Play flight audio
             StartCoroutine(transitionAnimation());
         }
     }

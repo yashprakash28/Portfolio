@@ -22,8 +22,8 @@ public class SolarSystemManager : MonoBehaviour
     public GameObject landButton;
     public TMP_Text landText;
     public static string currentPlanet;
-    // private int maxAsteroids = 10;
-    private int maxAsteroids = 40;
+    private int maxAsteroids = 5;
+    public TextMeshPro playerName;
 
     public GameObject[] asteroids;
     void Start()
@@ -42,6 +42,8 @@ public class SolarSystemManager : MonoBehaviour
         nearestPlanet.distance = Vector3.Distance(planetList[0].transform.position, ship.transform.position);
 
         placeAsteroids();
+
+        playerName.text = HomeManager.userName + "'s Ship";
 
     }
 
@@ -74,9 +76,8 @@ public class SolarSystemManager : MonoBehaviour
         {
             for(int i=0 ; i<maxAsteroids ; i++)
             {
-                Vector3 pos = new Vector3(-40f+i, Random.Range(-3, 3), Random.Range(27, 40));
+                Vector3 pos = new Vector3(-40f+2*i, Random.Range(-3, 3), Random.Range(27, 40));
                 Instantiate(ast, pos, Quaternion.identity);
-                // ast.transform.scale = new Vector3()
             }
         }
     }
@@ -86,10 +87,12 @@ public class SolarSystemManager : MonoBehaviour
         if(obj.activeInHierarchy)
         {
             obj.SetActive(false);
+            ship.SetActive(true);
         }
         else
         {
             obj.SetActive(true);
+            ship.SetActive(false);
         }
     }
 
