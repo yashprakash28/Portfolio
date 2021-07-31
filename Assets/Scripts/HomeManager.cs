@@ -63,9 +63,9 @@ public class HomeManager : MonoBehaviour
         spaceShipScreen.SetActive(true);
 
 
-        camera.transform.DOMove(new Vector3(0f, 3.3f, -6.3f), 2.5f, false);
+        camera.transform.DOMove(new Vector3(0f, 4.7f, -7.81f), 2.5f, false);
         yield return new WaitForSeconds(0.5f);
-        camera.transform.DORotate(new Vector3(25f, 0f, 0f), 2.5f);
+        camera.transform.DORotate(new Vector3(29.41f, 0f, 0f), 2.5f);
     }
 
 }

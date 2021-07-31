@@ -22,7 +22,7 @@ public class SolarSystemManager : MonoBehaviour
     public GameObject landButton;
     public TMP_Text landText;
     public static string currentPlanet;
-    private int maxAsteroids = 5;
+    private int maxAsteroids = 3;
     public TextMeshPro playerName;
 
     public GameObject[] asteroids;
@@ -43,32 +43,44 @@ public class SolarSystemManager : MonoBehaviour
 
         placeAsteroids();
 
-        playerName.text = HomeManager.userName + "'s Ship";
+        if(HomeManager.userName == null)
+        {
+            playerName.text = "Your Ship";
+        }
+        else
+        {
+            playerName.text = HomeManager.userName + "'s Ship";
+        }
 
     }
 
     void Update()
     {
-
+        // checkLand();
         for(int i=0 ; i<planets.transform.childCount ; i++)
         {
             distance[i] = Vector3.Distance(planetList[i].transform.position, ship.transform.position);
 
-            if(distance[i]<2.5f)
+            if(distance[i]<5f)
             {
                 landButton.SetActive(true);
                 Debug.Log("land on " + planetList[i].name);
-                landText.text = "Click here to Land on " + planetList[i].name;
+                landText.text = "Press F Key to Land on " + planetList[i].name;
                 currentPlanet = planetList[i].name;
 
             }
         }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            SceneManager.LoadScene("PlanetSurface");
+        }
     }
 
-    public void land()
-    {
-        SceneManager.LoadScene("PlanetSurface");
-    }
+    // public void checkLand()
+    // {
+        
+    // }
 
     void placeAsteroids()
     {
@@ -76,7 +88,7 @@ public class SolarSystemManager : MonoBehaviour
         {
             for(int i=0 ; i<maxAsteroids ; i++)
             {
-                Vector3 pos = new Vector3(-40f+2*i, Random.Range(-3, 3), Random.Range(27, 40));
+                Vector3 pos = new Vector3(-40f+3*i, Random.Range(-3, 3), Random.Range(27, 40));
                 Instantiate(ast, pos, Quaternion.identity);
             }
         }
