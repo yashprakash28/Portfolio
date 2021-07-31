@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.Video;
 
 public class HomeManager : MonoBehaviour
 {
@@ -16,6 +17,14 @@ public class HomeManager : MonoBehaviour
     public GameObject homeScreen;
     public GameObject camera;
     public GameObject spaceShipScreen;
+    public GameObject videoPanel;
+
+    void Start()
+    {
+        var videoPlayer = videoPanel.GetComponent<VideoPlayer>();
+        videoPlayer.url = System.IO.Path.Combine (Application.streamingAssetsPath,"galaxyVideo.mp4"); 
+        videoPlayer.Play();
+    }
 
 
     public void takeOffButton()

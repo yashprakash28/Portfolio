@@ -469,8 +469,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 160305930}
-  - component: {fileID: 160305929}
   - component: {fileID: 160305931}
+  - component: {fileID: 160305929}
   m_Layer: 0
   m_Name: SpaceShips
   m_TagString: Untagged
@@ -487,9 +487,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 160305928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3f871c7160caf4698568000cb16f03, type: 3}
+  m_Script: {fileID: 11500000, guid: 93acffad4c2231841a7bcb570e94c55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRotateX: 0
+  isRotateY: 1
+  isRotateZ: 0
+  isDim: 0
+  isTranslateX: 0
+  isTranslateY: 0
+  isTranslateZ: 0
+  speed: 1
+  initialPos: {x: 0, y: 0, z: 0}
+  offset: 0
 --- !u!4 &160305930
 Transform:
   m_ObjectHideFlags: 0
@@ -756,12 +766,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 111.49
+  m_fontSize: 111.29
   m_fontSizeBase: 111.49
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 111.29
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2213,7 +2223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1087857037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3069,6 +3079,7 @@ MonoBehaviour:
   homeScreen: {fileID: 114502081}
   camera: {fileID: 963194225}
   spaceShipScreen: {fileID: 1646986748}
+  videoPanel: {fileID: 1164192613}
 --- !u!4 &2140096608
 Transform:
   m_ObjectHideFlags: 0
